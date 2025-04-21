@@ -2,7 +2,7 @@ import { JSX } from 'react';
 import styles from './dateAndLikes.module.css';
 import cn from 'classnames';
 import { DateAndLikesProps } from './dateAndLikes.props';
-import { ButtonLike } from '@/src/components/ButtonLike/ButtonLike';
+import { Likes } from '@/src/components/likes/likes';
 
 export default function DateAndLikes({ date, likes }: DateAndLikesProps): JSX.Element {
     return (
@@ -11,7 +11,7 @@ export default function DateAndLikes({ date, likes }: DateAndLikesProps): JSX.El
             <span className={cn(styles.date__date)}>
                 <span className={cn(styles.date__dot)}>.</span>{'\u00A0'}{date}
             </span>
-            <ButtonLike>{likes}</ButtonLike>
+            <Likes>{likes}</Likes>
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import { JSX } from 'react';
-import styles from './ButtonLike.module.css';
+import styles from './likes.module.css';
 import cn from 'classnames';
-import { ButtonLikeProps } from './ButtonLikeProps';
+import { LikesProps } from './likesProps';
 
-export const ButtonLike = ({ children, ...props }: ButtonLikeProps): JSX.Element => {
+export const Likes = ({ children, ...props }: LikesProps): JSX.Element => {
     return (
         <button
             className={cn(styles.likes_button)}
