@@ -11,7 +11,7 @@ export default function DateAndLikes({ date, likes }: DateAndLikesProps): JSX.El
             <span className={cn(styles.date__date)}>
                 <span className={cn(styles.date__dot)}>.</span>{'\u00A0'}{date}
             </span>
-            <ButtonLike appearance='counter'>{likes}</ButtonLike>
+            <ButtonLike>{likes}</ButtonLike>
         </div>
     )
 }

@@ -1,17 +1,14 @@
 .likes_button {
     position: relative;
+    padding-right: 19px;
+    border: none;
+    font-size: 12px;
     color: var(--white);
     background-color: transparent;
-    font-size: 12px;
     cursor: pointer;
 }
 
-.counter {
-    padding-right: 19px;
-    border: none;
-}
-
-.counter::before {
+.likes_button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -20,14 +17,14 @@
     height: 13px;
     background-color: var(--white);
     mask: url("../../../public/shape.svg") no-repeat center / 13px 13px;
-    transition: background-color 0.2s;
+    transition: background-color 0.15s;
 }
 
 @media (any-hover: hover) {
-    .counter:hover {
+    .likes_button:hover {
         color: var(--light-blue);
     }
-    .counter:hover::before {
+    .likes_button:hover::before {
         background-color: var(--light-blue);
     }
 }
