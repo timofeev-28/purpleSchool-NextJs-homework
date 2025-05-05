@@ -1,5 +1,6 @@
 export interface DataCardMiniProps {
-    image: string;
+    id: number;
+    src: string;
     date_public: string;
     count_likes: number;
     title: string;

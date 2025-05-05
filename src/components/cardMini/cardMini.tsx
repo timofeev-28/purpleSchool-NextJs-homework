@@ -1,26 +1,39 @@
+'use client';
+
 import { JSX } from 'react';
 import styles from './cardMini.module.css';
-import cn from 'classnames';
 import Image from 'next/image';
-import { dataCardMini } from '@/src/utils/dataCardMini';
-import CardInfo from './cardMiniInfo/cardMiniInfo';
-import { DataCardMiniProps } from '@/src/interface/dataCardMiniProps';
+import Like from '../like/like';
+import axios from 'axios';
+import CardMiniInfo from './cardMiniInfo/cardMiniInfo';
+import { CardMiniProps } from './cardMini.props';
 
-export default function CardMini(): JSX.Element {
-    const card: DataCardMiniProps = dataCardMini?.card;
+export default function CardMini({ src, data}: CardMiniProps): JSX.Element {
 
-    return (card &&
-        <div className={cn(styles.card)}>
-            <div className={cn(styles.card__image_wrap)}>
+    const changeLikes = async () => {
+        try {
+            const { data } = await axios.patch(`https://jsonplaceholder.typicode.com/posts/1`, {
+                likes: 1
+            });
+            console.log(data)
+        } catch(e) {
+            console.error(e);
+        }
+    };
+
+    return (
+        <div className={styles.card}>
+            <div className={styles.card__image_wrap}>
                 <Image
-                    className={cn(styles.card__image)}
-                    src={card.image}
+                    className={styles.card__image}
+                    src={src}
                     width={300}
                     height={192}
                     alt='Card'
                 />
             </div>
-            <CardInfo data={card} />
+            <CardMiniInfo data={data} />
+            <Like onClick={changeLikes} />
         </div>
     );
 }

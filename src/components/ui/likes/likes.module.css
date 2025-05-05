@@ -16,7 +16,7 @@
     width: 13px;
     height: 13px;
     background-color: var(--white);
-    mask: url("../../../public/shape.svg") no-repeat center / 13px 13px;
+    mask: url("../../../../public/shape.svg") no-repeat center / 13px 13px;
     transition: background-color 0.15s;
 }
 
