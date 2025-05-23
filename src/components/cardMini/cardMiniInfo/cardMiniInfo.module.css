@@ -1,4 +1,7 @@
 .info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding-top: 20px;
 }
 
@@ -6,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
     font-size: 12px;
     line-height: 16px;
 }

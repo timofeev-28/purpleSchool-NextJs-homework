@@ -2,22 +2,22 @@ import { JSX } from 'react';
 import cn from 'classnames';
 import styles from './cardsBlog.module.css';
 import CardMini from '../cardMini/cardMini';
-import { dataCardsMini } from '@/src/utils/dataCardsMini';
-import { DataCardMiniProps } from '@/src/interface/dataCardMiniProps';
 import { P } from '../ui/p/P';
+import GetPosts from '@/src/utils/getPosts';
+import { SUM_POSTS } from '@/src/helpers/sumPosts';
 
-export default function CardsBlog(): JSX.Element {
-    const cards: DataCardMiniProps[] = dataCardsMini?.cards;
+export default async function CardsBlog(): Promise<JSX.Element> {
+    const posts = await GetPosts();
 
     return (
         <div className={cn('container', styles.cards_blog)}>
-            {cards.length > 0 ?
-                cards?.map((card) => (
-                    <CardMini key={card?.id} src={card?.src} data={card} />
-                ))
-                :
-                <P>Здесь пока ничего нет...</P>
-            }
+            {!posts && <P>Не удалось загрузить данные...</P>}
+            {posts && posts.length <= 0 && <P>Здесь пока ничего нет...</P>}
+
+            {posts && posts.length > 0 &&
+                posts?.slice(0, SUM_POSTS)?.map((post) => (
+                    <CardMini key={post?.id} data={post} />
+                ))}
         </div>
     );
 }

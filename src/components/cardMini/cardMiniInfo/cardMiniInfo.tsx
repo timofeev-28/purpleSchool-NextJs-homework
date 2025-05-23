@@ -4,19 +4,18 @@ import DateAndLikes from './dateAndLikes/dateAndLikes';
 import { HTag } from '../../ui/hTag/HTag';
 import { P } from '../../ui/p/P';
 import Link from 'next/link';
-import { CardMiniInfoProps } from './cardMiniInfo.props';
+import { PostItem } from '@/src/interface/postItem';
 
-export default function CardMiniInfo({ data }: CardMiniInfoProps): JSX.Element {
-    const href = data?.link ?? '';
-
+export default function CardMiniInfo({ data }: {data: PostItem}): JSX.Element {
+    
     return (
         <div className={styles.info}>
-            <DateAndLikes date={data?.date_public} likes={data?.count_likes} />
+            <DateAndLikes />
             <HTag tag='h3'>{data?.title}</HTag>
-            <P size='s'>{data?.description}</P>
+            <P size='s'>{data?.body}</P>
             <div className={styles.info__time_wrap}>
-                <span className={styles.info__time}>{data?.reading_time}</span>
-                <Link className={styles.info__link} href={href}>Читать</Link>
+                <span className={styles.info__time}>{'3 минуты'}</span>
+                <Link className={styles.info__link} href={`/post/${data?.id}`}>Читать</Link>
             </div>
         </div>
     );
