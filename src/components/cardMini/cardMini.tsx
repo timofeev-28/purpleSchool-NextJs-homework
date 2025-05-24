@@ -3,7 +3,7 @@
 import { JSX } from 'react';
 import styles from './cardMini.module.css';
 import Image from 'next/image';
-import CardMiniInfo from './cardMiniInfo/cardMiniInfo';
+import CardMiniInfo from '@/src/components/cardMini/cardMiniInfo/cardMiniInfo';
 import { PostItem } from '@/src/interface/postItem';
 
 export default function CardMini({ data }: {data: PostItem}): JSX.Element {

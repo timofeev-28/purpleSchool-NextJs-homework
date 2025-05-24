@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { JSX, useContext } from 'react';
 import styles from './github.module.css';
-import { GithubContext } from '../../../context/githubContext';
+import { GithubContext } from '@/src/context/githubContext';
 import { IContext } from '@/src/context/githubContext';
 
 export default function Github(): JSX.Element {

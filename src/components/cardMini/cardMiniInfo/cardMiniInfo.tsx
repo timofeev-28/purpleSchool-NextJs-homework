@@ -1,8 +1,8 @@
 import { JSX } from 'react';
 import styles from './cardMiniInfo.module.css';
-import DateAndLikes from './dateAndLikes/dateAndLikes';
-import { HTag } from '../../ui/hTag/HTag';
-import { P } from '../../ui/p/P';
+import DateAndLikes from '@/src/components/cardMini/cardMiniInfo/dateAndLikes/dateAndLikes';
+import { HTag } from '@/src/components/ui/hTag/HTag';
+import { P } from '@/src/components/ui/p/P';
 import Link from 'next/link';
 import { PostItem } from '@/src/interface/postItem';
 

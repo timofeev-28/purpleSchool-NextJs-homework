@@ -4,9 +4,9 @@ import { JSX } from 'react';
 import styles from './post.module.css';
 import cn from 'classnames';
 import { PostItem } from '@/src/interface/postItem';
-import DateAndLikes from '../cardMini/cardMiniInfo/dateAndLikes/dateAndLikes';
+import DateAndLikes from '@/src/components/cardMini/cardMiniInfo/dateAndLikes/dateAndLikes';
 import Image from 'next/image';
-import Like from '../like/like';
+import Like from '@/src/components/like/like';
 import { changeLikes } from '@/src/utils/changeLikes';
 
 export default function Post({ data }: {data: PostItem}): JSX.Element {

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { JSX } from 'react';
 import cn from 'classnames';
 import styles from './header.module.css';
-import Logo from '../ui/logo/logo';
-import Github from './github/github';
+import Logo from '@/src/components/ui/logo/logo';
+import Github from '@/src/components/header/github/github';
 import { GithubContextProvider } from '@/src/context/githubContext';
 
 const githubLink = 'https://github.com/timofeev-28/purpleSchool-NextJs-homework';
